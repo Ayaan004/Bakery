@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Dorée | Luxury Bakery & Confectionery — Cakes, Gourmet Donuts & Haute Cupcakes</title>
+  <meta name="description" content="Experience handcrafted luxury cakes, 24K gold glazed donuts, and artisan cupcakes at Maison Dorée. Order online for chilled courier delivery or reserve a table in our tasting lounge.">
+  <meta name="keywords" content="luxury bakery, gourmet donuts, artisanal cupcakes, custom celebration cakes, 24k gold cakes, high tea lounge, wedding cakes">
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:title" content="Maison Dorée | Luxury Bakery & Confectionery">
+  <meta property="og:description" content="Handcrafted cakes, gourmet glazed donuts, and couture cupcakes with 24K gold leaf.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Top Announcement Bar & Luxury Controls
+       ========================================================================== -->
+  <div class="announcement-bar">
+    <div class="announcement-inner">
+      <div class="announcement-ticker">
+        <span>✨ Complimentary Box of 6 Luxury Cupcakes on orders over $120</span>
+        <span style="opacity: 0.5;">•</span>
+        <span>Use Promo Code: <strong>LUXE15</strong> for 15% VIP Discount</span>
+        <span style="opacity: 0.5;">•</span>
+        <span>Dessert Tasting Lounge Reservations Open in New York & Paris</span>
+      </div>
+
+      <div class="announcement-actions">
+        <!-- Ambient Sound Synthesizer Toggle -->
+        <button id="ambientAudioBtn" class="audio-toggle-btn" title="Toggle Bakery Lounge Ambience">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+          </svg>
+          <span>Lounge Ambience</span>
+        </button>
+
+        <!-- Dynamic Currency Selector -->
+        <div class="currency-select-wrap">
+          <label for="globalCurrencySelect">Currency:</label>
+          <select id="globalCurrencySelect" class="currency-select">
+            <option value="USD">USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Site Header & Luxury Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <svg class="brand-crest" viewBox="0 0 44 44" fill="currentColor">
+          <path d="M22 2L25 12H35L27 18L30 28L22 22L14 28L17 18L9 12H19L22 2Z" fill="url(#goldGradientCrest)"/>
+          <circle cx="22" cy="22" r="20" fill="none" stroke="url(#goldGradientCrest)" stroke-width="1.5" stroke-dasharray="2 3"/>
+          <defs>
+            <linearGradient id="goldGradientCrest" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f4dc9e"/>
+              <stop offset="50%" stop-color="#c5a059"/>
+              <stop offset="100%" stop-color="#8c6e33"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-names">
+          <span class="brand-title">MAISON DORÉE</span>
+          <span class="brand-subtitle">Luxury Bakery & Confectionery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu">
+        <a href="#menuSection" class="nav-link">Our Treats</a>
+        <a href="#bespokeSection" class="nav-link">Custom Cakes</a>
+        <a href="#gallerySection" class="nav-link">Sweet Gallery</a>
+        <a href="#salonSection" class="nav-link">Tasting Lounge</a>
+        <a href="#heritageSection" class="nav-link">Master Baker</a>
+        <a href="#reviewsSection" class="nav-link">Reviews</a>
+        <a href="#boutiquesSection" class="nav-link">Boutiques</a>
+      </nav>
+
+      <!-- Action Icons -->
+      <div class="header-actions">
+        <!-- Theme Switcher (Obsidian vs Ivory) -->
+        <button id="themeToggleBtn" class="icon-btn" title="Toggle Dark/Light Theme">
+          <span id="themeToggleIcon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Wishlist Button -->
+        <button class="icon-btn" onclick="Cart.toggleWishlistDrawer(true)" title="Saved Treats">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+          <span class="badge-count wish-badge-count" style="display: none;">0</span>
+        </button>
+
+        <!-- Cart Bag Button -->
+        <button class="icon-btn" onclick="Cart.toggleDrawer(true)" title="Shopping Bag">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="badge-count cart-badge-count" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileNavToggle" class="icon-btn mobile-toggle" title="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div id="mobileNavMenu" class="mobile-nav-overlay">
+    <div class="mobile-nav-links">
+      <a href="#menuSection" onclick="document.getElementById('mobileNavMenu').classList.remove('open')">Our Treats</a>
+      <a href="#bespokeSection" onclick="document.getElementById('mobileNavMenu').classList.remove('open')">Custom Cakes</a>
+      <a href="#gallerySection" onclick="document.getElementById('mobileNavMenu').classList.remove('open')">Sweet Gallery</a>
+      <a href="#salonSection" onclick="document.getElementById('mobileNavMenu').classList.remove('open')">Tasting Lounge</a>
+      <a href="#heritageSection" onclick="document.getElementById('mobileNavMenu').classList.remove('open')">Master Baker</a>
+      <a href="#reviewsSection" onclick="document.getElementById('mobileNavMenu').classList.remove('open')">Customer Reviews</a>
+      <a href="#boutiquesSection" onclick="document.getElementById('mobileNavMenu').classList.remove('open')">Our Boutiques</a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Hero Section with Atmospheric Bakery Background Image
+       ========================================================================== -->
+  <section class="hero-section">
+    <div class="hero-bg-glow"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-accolade-badge">
+            <span>✨ World Pastry Champion 2024 • Master Confectionery</span>
+          </div>
+
+          <h1 class="hero-title">
+            Artisan <span class="gold-text">Cakes</span>, <br>
+            Gourmet <span class="gold-text">Donuts</span> & <br>
+            Haute <span class="gold-text">Cupcakes</span>.
+          </h1>
+
+          <p class="hero-description">
+            Welcome to Maison Dorée. Step into our world of freshly torched crème brûlée donuts, 24-karat gold dark truffle cakes, and cloud-like vanilla bean cupcakes crafted by master pastry chefs.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="App.scrollToMenu()">
+              <span>Explore Bakery Menu</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <button class="btn btn-outline btn-lg" onclick="App.scrollToCakes()">
+              <span>Design Custom Cake</span>
+            </button>
+            <button class="btn btn-outline btn-lg" onclick="App.scrollToSalon()">
+              <span>Book Tasting Table</span>
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Natural Ingredients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24K</span>
+              <span class="stat-label">Florentine Gold</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Fresh</span>
+              <span class="stat-label">Baked Daily 7 AM</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">4.9★</span>
+              <span class="stat-label">Customer Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="hero-visual-card">
+          <div class="hero-image-wrap">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=90" 
+                 alt="Maison Dorée 24K Gold Dark Chocolate Truffle Cake" 
+                 loading="eager">
+          </div>
+          <div class="hero-floating-card">
+            <div class="floating-icon">🎂</div>
+            <div class="floating-text">
+              <h4>Oven Batch Ready</h4>
+              <p>Freshly Glazed & Torched • Baked Warm 25m Ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Visual Category Cards Showcase (Rich Background Pictures)
+       ========================================================================== -->
+  <section class="category-showcase-section">
+    <div class="container">
+      <div class="category-showcase-grid">
+        <!-- 1. Signature Cakes -->
+        <div class="category-banner-card" onclick="App.setCategoryFilter('cakes'); App.scrollToMenu();">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85" alt="Luxury Signature Cakes" loading="lazy">
+          <div class="category-banner-overlay"></div>
+          <div class="category-banner-content">
+            <div class="category-banner-tag">Collection 01</div>
+            <h3 class="category-banner-title">Signature Cakes</h3>
+            <span class="category-banner-link">
+              <span>View Cakes</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 2. Gourmet Donuts -->
+        <div class="category-banner-card" onclick="App.setCategoryFilter('donuts'); App.scrollToMenu();">
+          <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1000&q=85" alt="Gourmet Glazed Donuts" loading="lazy">
+          <div class="category-banner-overlay"></div>
+          <div class="category-banner-content">
+            <div class="category-banner-tag">Collection 02</div>
+            <h3 class="category-banner-title">Gourmet Donuts</h3>
+            <span class="category-banner-link">
+              <span>View Donuts</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 3. Haute Cupcakes -->
+        <div class="category-banner-card" onclick="App.setCategoryFilter('cupcakes'); App.scrollToMenu();">
+          <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=1000&q=85" alt="Haute Couture Cupcakes" loading="lazy">
+          <div class="category-banner-overlay"></div>
+          <div class="category-banner-content">
+            <div class="category-banner-tag">Collection 03</div>
+            <h3 class="category-banner-title">Haute Cupcakes</h3>
+            <span class="category-banner-link">
+              <span>View Cupcakes</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- 4. Bespoke Cakes -->
+        <div class="category-banner-card" onclick="App.scrollToCakes();">
+          <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=1000&q=85" alt="Custom Bespoke Celebration Cakes" loading="lazy">
+          <div class="category-banner-overlay"></div>
+          <div class="category-banner-content">
+            <div class="category-banner-tag">Custom Atelier</div>
+            <h3 class="category-banner-title">Celebration Cakes</h3>
+            <span class="category-banner-link">
+              <span>Build Custom Cake</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Menu & Master Catalog Section
+       ========================================================================== -->
+  <section id="menuSection" class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Fresh From The Hearth</span>
+        <h2 class="section-title">The Master Bakery Collection</h2>
+        <p class="section-subtitle">
+          Every cake, donut, and cupcake is freshly sculpted each morning using slow-churned cultured butter, Bourbon vanilla beans, and rare 70% Valrhona grand cru dark chocolate.
+        </p>
+      </div>
+
+      <!-- Catalog Filter & Search Toolbar -->
+      <div class="catalog-toolbar">
+        <div class="toolbar-primary">
+          <!-- Category Pills -->
+          <div class="category-pills">
+            <button class="pill-btn active" onclick="App.setCategoryFilter('all', this)">All Treats</button>
+            <button class="pill-btn" onclick="App.setCategoryFilter('cakes', this)">Signature Cakes</button>
+            <button class="pill-btn" onclick="App.setCategoryFilter('donuts', this)">Gourmet Donuts</button>
+            <button class="pill-btn" onclick="App.setCategoryFilter('cupcakes', this)">Haute Cupcakes</button>
+          </div>
+
+          <!-- Controls -->
+          <div class="toolbar-controls">
+            <!-- Search -->
+            <div class="search-input-wrap">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+              </svg>
+              <input type="text" id="catalogSearchInput" class="search-input" placeholder="Search chocolate, caramel, vanilla...">
+            </div>
+
+            <!-- Sort By -->
+            <select id="catalogSortSelect" class="sort-select">
+              <option value="featured">Featured Favorites</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Customer Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dietary Chips & Results Count -->
+        <div class="toolbar-secondary">
+          <span class="filter-label">Dietary & Style:</span>
+          <button class="dietary-chip active" onclick="App.setDietaryFilter('all', this)">All</button>
+          <button class="dietary-chip" onclick="App.setDietaryFilter('signature', this)">Chef's Signature</button>
+          <button class="dietary-chip" onclick="App.setDietaryFilter('vegetarian', this)">Vegetarian</button>
+          <button class="dietary-chip" onclick="App.setDietaryFilter('nut-free', this)">Nut-Free</button>
+
+          <span id="catalogResultsCount" style="margin-left: auto; font-size: 0.76rem; color: var(--gold-light); font-weight: 600;">19 Creations Available</span>
+        </div>
+      </div>
+
+      <!-- Dynamic Product Cards Grid -->
+      <div id="catalogGrid" class="products-grid">
+        <!-- Injected via App.renderCatalog() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Parallax Feature Banner (Fills Background with Bakery Glow)
+       ========================================================================== -->
+  <section class="parallax-feature-banner" style="background-image: url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=2000&q=85');">
+    <div class="container">
+      <div class="parallax-banner-content">
+        <span class="section-label">Artisan Dedication</span>
+        <h2 class="section-title" style="color: #fff; margin-bottom: 1.25rem;">Hand-Glazed & Fresh Out of the Oven</h2>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.2rem;">
+          From our crackling torched crème brûlée donuts to our multi-tiered gold-dusted wedding cakes, our master bakers combine classic pastry techniques with the world's most luxurious ingredients.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+          <button class="btn btn-primary btn-lg" onclick="App.scrollToCakes()">
+            <span>Design a Custom Cake</span>
+          </button>
+          <button class="btn btn-outline btn-lg" onclick="App.scrollToSalon()">
+            <span>Reserve Tasting Lounge</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Bespoke Haute Couture Cake Atelier (Configurator)
+       ========================================================================== -->
+  <section id="bespokeSection" class="section section-alt">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Custom Cake Atelier</span>
+        <h2 class="section-title">Design Your Custom Celebration Cake</h2>
+        <p class="section-subtitle">
+          Create an architectural tiered centerpiece for birthdays, luxury weddings, and private galas. Watch your cake update in real time with custom sponges, velvet finishes, and hand-applied 24K gold.
+        </p>
+      </div>
+
+      <div class="cake-atelier-container">
+        <!-- Visualizer & Summary Pane (Left) -->
+        <div class="cake-visualizer-pane">
+          <div class="section-label" style="font-size: 0.72rem; margin-bottom: 1.5rem;">Live 3D-Style Cake Preview</div>
+          
+          <div class="cake-stage">
+            <div class="cake-pedestal"></div>
+            <div id="cakeTiersStack" class="cake-tiers-stack">
+              <!-- Rendered dynamically by CakeBuilder.updatePreview() -->
+            </div>
+            <div id="cakeTopperVisual" class="cake-topper-visual">👑</div>
+          </div>
+
+          <div class="cake-live-summary">
+            <div class="cake-summary-row">
+              <span>Tier Size:</span>
+              <strong id="cakeSummaryTier">Classic Two Tiers (25 - 30 Servings)</strong>
+            </div>
+            <div class="cake-summary-row">
+              <span>Sponge Cake:</span>
+              <strong id="cakeSummarySponge">Madagascan Bourbon Vanilla</strong>
+            </div>
+            <div class="cake-summary-row">
+              <span>Frosting Finish:</span>
+              <strong id="cakeSummaryFinish">Midnight Obsidian Velvet & 24K Gold</strong>
+            </div>
+            <div class="cake-summary-row">
+              <span>Luxe Extras:</span>
+              <strong id="cakeSummaryExtras">Cascading 24K Edible Gold Leaf</strong>
+            </div>
+
+            <div class="cake-summary-total">
+              <span>Estimated Custom Price:</span>
+              <span id="cakeSummaryTotalPrice" class="cake-summary-price">$260.00</span>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+              <button id="addBespokeToBagBtn" class="btn btn-primary btn-full">
+                <span>Add Custom Cake to Bag</span>
+              </button>
+              <button class="btn btn-outline" onclick="App.scrollToSalon()" title="Request private cake tasting consultation">
+                <span>Book Tasting</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Configuration Steps Pane (Right) -->
+        <div class="cake-steps-pane">
+          <!-- Step 1: Tier Architecture -->
+          <div class="config-step">
+            <div class="step-header">
+              <span class="step-num">1</span>
+              <h3>Select Tier Architecture & Guest Servings</h3>
+            </div>
+            <div id="cakeTiersOptions" class="options-grid">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Step 2: Sponge & Curd -->
+          <div class="config-step">
+            <div class="step-header">
+              <span class="step-num">2</span>
+              <h3>Choose Sponge Flavor & Filling</h3>
+            </div>
+            <div id="cakeSpongesOptions" class="options-grid">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Step 3: Luxe Finish & Texture -->
+          <div class="config-step">
+            <div class="step-header">
+              <span class="step-num">3</span>
+              <h3>Select Frosting Texture & Color Palette</h3>
+            </div>
+            <div id="cakeFinishesOptions" class="options-grid">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Step 4: Haute Accents -->
+          <div class="config-step">
+            <div class="step-header">
+              <span class="step-num">4</span>
+              <h3>Luxury Accents & Embellishments</h3>
+            </div>
+            <div id="cakeExtrasOptions" class="options-grid">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <!-- Inscription Plaque Input -->
+            <div class="inscription-box">
+              <label class="form-label" for="cakeInscriptionInput">Hand-Piped Chocolate Plaque Message (Complimentary):</label>
+              <input type="text" id="cakeInscriptionInput" class="inscription-input" placeholder="e.g. Happy 30th Birthday Sophia • Forever & Always" maxlength="60">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Photo Gallery Wall ("The Sweet Gallery / Behind the Scenes")
+       ========================================================================== -->
+  <section id="gallerySection" class="gallery-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Visual Indulgence</span>
+        <h2 class="section-title">The Sweet Gallery</h2>
+        <p class="section-subtitle">
+          A glimpse inside our pastry atelier. Torched glazes, slow-folded butter doughs, and hand-applied 24-karat gold leaf.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- 1. Gold Dark Truffle Cake -->
+        <div class="gallery-photo-card" onclick="App.openQuickView('md-cake-01')">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=85" alt="24K Gold Dark Truffle Cake" loading="lazy">
+          <div class="gallery-overlay-badge">
+            <span>24K Gold Truffle Cake</span>
+            <span>$42.00</span>
+          </div>
+        </div>
+
+        <!-- 2. Torched Crème Brûlée Donut -->
+        <div class="gallery-photo-card" onclick="App.openQuickView('md-donut-02')">
+          <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=85" alt="Crème Brûlée Torched Donut" loading="lazy">
+          <div class="gallery-overlay-badge">
+            <span>Torched Crème Brûlée Donut</span>
+            <span>$8.50</span>
+          </div>
+        </div>
+
+        <!-- 3. Gold Chocolate Cupcake -->
+        <div class="gallery-photo-card" onclick="App.openQuickView('md-cupcake-01')">
+          <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=800&q=85" alt="24K Gold Chocolate Cupcake" loading="lazy">
+          <div class="gallery-overlay-badge">
+            <span>24K Gold Fudge Cupcake</span>
+            <span>$7.50</span>
+          </div>
+        </div>
+
+        <!-- 4. Tiered Wedding Cake -->
+        <div class="gallery-photo-card" onclick="App.openQuickView('md-bespoke-01')">
+          <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=800&q=85" alt="Tiered Celebration Cake" loading="lazy">
+          <div class="gallery-overlay-badge">
+            <span>3-Tier Celebration Cake</span>
+            <span>$240.00</span>
+          </div>
+        </div>
+
+        <!-- 5. Salted Caramel Drip Cake -->
+        <div class="gallery-photo-card" onclick="App.openQuickView('md-cake-03')">
+          <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?auto=format&fit=crop&w=800&q=85" alt="Salted Caramel Drip Cake" loading="lazy">
+          <div class="gallery-overlay-badge">
+            <span>Caramel Pecan Drip Cake</span>
+            <span>$39.00</span>
+          </div>
+        </div>
+
+        <!-- 6. Dark Chocolate Hazelnut Donut -->
+        <div class="gallery-photo-card" onclick="App.openQuickView('md-donut-03')">
+          <img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?auto=format&fit=crop&w=800&q=85" alt="Dark Chocolate Hazelnut Donut" loading="lazy">
+          <div class="gallery-overlay-badge">
+            <span>Chocolate Hazelnut Donut</span>
+            <span>$8.00</span>
+          </div>
+        </div>
+
+        <!-- 7. Vanilla Bean Swirl Cupcake -->
+        <div class="gallery-photo-card" onclick="App.openQuickView('md-cupcake-02')">
+          <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=800&q=85" alt="Vanilla Bean Swirl Cupcake" loading="lazy">
+          <div class="gallery-overlay-badge">
+            <span>Vanilla Bean Swirl Cupcake</span>
+            <span>$6.50</span>
+          </div>
+        </div>
+
+        <!-- 8. Royal Donut Gift Box -->
+        <div class="gallery-photo-card" onclick="App.openQuickView('md-donut-06')">
+          <img src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?auto=format&fit=crop&w=800&q=85" alt="Royal Donut Gift Box" loading="lazy">
+          <div class="gallery-overlay-badge">
+            <span>Royal Donut Tasting Box</span>
+            <span>$45.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       The Tasting Lounge & High Tea Reservations
+       ========================================================================== -->
+  <section id="salonSection" class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Private Seating</span>
+        <h2 class="section-title">The Dessert Tasting Lounge</h2>
+        <p class="section-subtitle">
+          Reserve your front-row table in our gilded lounge. Experience our Imperial High Tea service or our Chef's 5-Course Dessert Tasting.
+        </p>
+      </div>
+
+      <div class="reservation-wrapper">
+        <form id="salonReservationForm">
+          <div class="reservation-grid">
+            <!-- Left: Experience Picker -->
+            <div>
+              <label class="form-label" style="margin-bottom: 0.85rem;">Select Your Dessert Experience:</label>
+              <div id="experiencesContainer" class="experience-picker">
+                <!-- Rendered dynamically via ReservationEngine.renderExperiences() -->
+              </div>
+
+              <!-- Time Slots -->
+              <label class="form-label">Available Seating Timeslots:</label>
+              <div class="slot-grid">
+                <button type="button" class="time-slot-btn" onclick="ReservationEngine.selectSlot(this, '11:00 AM')">11:00 AM</button>
+                <button type="button" class="time-slot-btn selected" onclick="ReservationEngine.selectSlot(this, '02:00 PM')">02:00 PM</button>
+                <button type="button" class="time-slot-btn" onclick="ReservationEngine.selectSlot(this, '04:00 PM')">04:00 PM</button>
+                <button type="button" class="time-slot-btn" onclick="ReservationEngine.selectSlot(this, '06:30 PM')">06:30 PM</button>
+                <button type="button" class="time-slot-btn" onclick="ReservationEngine.selectSlot(this, '08:30 PM')">08:30 PM</button>
+              </div>
+            </div>
+
+            <!-- Right: Booking Details Form -->
+            <div>
+              <div class="form-group">
+                <label class="form-label" for="resBoutiqueSelect">Boutique Location:</label>
+                <select id="resBoutiqueSelect" class="form-control">
+                  <option value="New York Madison">New York • 740 Madison Avenue, Manhattan</option>
+                  <option value="Paris Vendôme">Paris • 18 Place Vendôme, 1st Arrondissement</option>
+                  <option value="London Mayfair">London • 28 Mount Street, Mayfair</option>
+                </select>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="resDateInput">Date of Seating:</label>
+                  <input type="date" id="resDateInput" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="resGuestsSelect">Number of Guests:</label>
+                  <select id="resGuestsSelect" class="form-control">
+                    <option value="1">1 Guest (Marble Counter)</option>
+                    <option value="2" selected>2 Guests (Intimate Table)</option>
+                    <option value="4">4 Guests (Velvet Booth)</option>
+                    <option value="6">6 Guests (Private Alcove)</option>
+                    <option value="8">8 Guests (Royal Table)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="resGuestName">Full Name:</label>
+                <input type="text" id="resGuestName" class="form-control" placeholder="Lady Eleanor Vance" required>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="resGuestEmail">Email Address:</label>
+                  <input type="email" id="resGuestEmail" class="form-control" placeholder="eleanor@domain.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="resGuestPhone">Phone / Mobile:</label>
+                  <input type="tel" id="resGuestPhone" class="form-control" placeholder="+1 (212) 555-0199">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="resNotes">Dietary Notes / Special Celebration:</label>
+                <textarea id="resNotes" class="form-control" rows="2" placeholder="e.g. Birthday Celebration, Nut allergy, Champagne pairing requested"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full btn-lg">
+                <span>Confirm Tasting Reservation</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Heritage & The Master Baker Section
+       ========================================================================== -->
+  <section id="heritageSection" class="section section-alt">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: center;">
+        <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-gold); box-shadow: var(--shadow-luxe);">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=85" 
+               alt="Master Baker Laurent Vautrin handcrafting brioche dough" 
+               loading="lazy" 
+               style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div>
+          <span class="section-label">Artisan Heritage</span>
+          <h2 class="section-title">The Pursuit of Confectionery Perfection</h2>
+          <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+            Founded with a passion for world-class craftsmanship, Maison Dorée treats every single cake, donut, and cupcake as an artistic sculpture. We source our butter from small heritage family farms and our vanilla beans directly from Madagascar growers.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+            "A truly great donut or cake is an alchemy of patience. Soft brioche dough given 24 hours of cold rest, pure French chocolate ganache, and unhurried hand-glazing." — <em>Executive Master Baker Laurent Vautrin</em>
+          </p>
+
+          <div style="display: flex; gap: 2rem; border-top: 1px solid var(--border-subtle); padding-top: 1.5rem;">
+            <div>
+              <div style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--gold-light); font-weight: 700;">24-Hour</div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.15em;">Brioche Fermentation</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--gold-light); font-weight: 700;">Pure Butter</div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.15em;">Slow-Cultured Cream</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--gold-light); font-weight: 700;">Zero Preservatives</div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.15em;">Baked Fresh Daily</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars Grid -->
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-num">01</div>
+          <h3>24-Hour Brioche Dough</h3>
+          <p>Our artisan donuts are crafted from enriched slow-fermented brioche dough, resulting in a cloud-like interior that never feels greasy or heavy.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-num">02</div>
+          <h3>Real Madagascan Vanilla</h3>
+          <p>We use whole Bourbon vanilla pods and raw vanilla caviar in our cupcake frostings and cake batters for a deep, intoxicating natural aroma.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-num">03</div>
+          <h3>Valrhona Grand Cru Cacao</h3>
+          <p>Single-origin 70% Guanaja dark chocolate and velvety Gianduja hazelnut chocolate create our signature glossy glazes and molten fudge cores.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-num">04</div>
+          <h3>24-Karat Edible Gold Leaf</h3>
+          <p>Hand-hammered gold leaf from historic Florentine goldsmiths is applied petal by petal to crown our luxury cakes and signature donuts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Press Accolades & Customer Reviews
+       ========================================================================== -->
+  <section id="reviewsSection" class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Gastronomic Accolades</span>
+        <h2 class="section-title">Critique & Customer Reflections</h2>
+        <p class="section-subtitle">
+          Celebrated across New York, London, and Paris by discerning food critics and devoted dessert lovers.
+        </p>
+      </div>
+
+      <!-- Press Quotes Ribbon -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3.5rem;">
+        <div style="padding: 1.5rem; background: var(--bg-card); border-left: 2px solid var(--gold-primary); border-radius: var(--radius-sm);">
+          <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--gold-light); letter-spacing: 0.2em; margin-bottom: 0.5rem;">Vogue Gourmet</div>
+          <p style="font-family: var(--font-serif); font-size: 1rem; color: var(--text-primary); font-style: italic;">"The 24K Gold Dark Truffle Cake and Crème Brûlée Donuts are the definition of sweet decadence."</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--bg-card); border-left: 2px solid var(--gold-primary); border-radius: var(--radius-sm);">
+          <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--gold-light); letter-spacing: 0.2em; margin-bottom: 0.5rem;">Michelin Guide</div>
+          <p style="font-family: var(--font-serif); font-size: 1rem; color: var(--text-primary); font-style: italic;">"Flawless texture balance and sensational flavor architecture in every single cupcake and donut."</p>
+        </div>
+        <div style="padding: 1.5rem; background: var(--bg-card); border-left: 2px solid var(--gold-primary); border-radius: var(--radius-sm);">
+          <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--gold-light); letter-spacing: 0.2em; margin-bottom: 0.5rem;">The New York Times</div>
+          <p style="font-family: var(--font-serif); font-size: 1rem; color: var(--text-primary); font-style: italic;">"An unforgettable dessert experience. The custom celebration cakes are true showstoppers."</p>
+        </div>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div id="reviewsList" class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"The 3-tier custom wedding cake designed by Maison Dorée for our daughter's reception was completely breathtaking. Guests are still talking about the pistachio and rose water layers!"</p>
+          <div class="review-author">
+            <div class="author-avatar">C</div>
+            <div>
+              <div class="author-name">Charlotte Kensington</div>
+              <div class="author-title">Manhattan • Wedding Host</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"The Crème Brûlée Torched Donut has a glass-like crunch and the silkiest vanilla bean custard filling. Hands down the best donut in the world."</p>
+          <div class="review-author">
+            <div class="author-avatar">J</div>
+            <div>
+              <div class="author-name">Julian Montgomery</div>
+              <div class="author-title">London Mayfair • Gourmet Regular</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">"The Box of 6 Haute Cupcakes arrived in beautiful gold ribbon packaging, perfectly chilled. The 24K gold chocolate fudge cupcake was pure heaven."</p>
+          <div class="review-author">
+            <div class="author-avatar">V</div>
+            <div>
+              <div class="author-name">Victoria Sterling</div>
+              <div class="author-title">Paris 8th • Dessert Enthusiast</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 2.5rem;">
+        <button class="btn btn-outline" onclick="App.openReviewModal()">
+          <span>Write a Customer Review</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Interactive FAQ Accordion
+       ========================================================================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Questions & Standards</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Everything you need to know about our courier delivery, cake storage rituals, and custom orders.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-item-header">
+            <h4>How are delicate cakes, donuts, and cupcakes kept fresh during delivery?</h4>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="faq-body">
+            <p>All orders are transported in custom temperature-controlled refrigerated couriers chilled to precisely 4°C (39°F). Cakes are secured with magnetic velvet bases, and donuts and cupcakes are seated in custom inserts to ensure they arrive in pristine condition.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-item-header">
+            <h4>How much notice is required for Custom Bespoke Celebration Cakes?</h4>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="faq-body">
+            <p>For 1 to 2 tier celebration cakes, we recommend 48 to 72 hours of notice. For 3 and 4 tier Royal Architecture cakes with hand-sculpted flowers and 24K gold leaf, we advise booking 1 to 3 weeks in advance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-item-header">
+            <h4>How should I store and serve the cakes and gourmet donuts?</h4>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="faq-body">
+            <p>Our gourmet donuts are best enjoyed on the day of delivery at room temperature. Cakes should be kept refrigerated and brought to room temperature 20 minutes before slicing to allow the buttercream to soften to velvety perfection.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-item-header">
+            <h4>Do you cater for nut allergies and vegetarian preferences?</h4>
+            <div class="faq-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="faq-body">
+            <p>Yes. All of our cakes, donuts, and cupcakes are 100% vegetarian. We also have clearly labeled nut-free creations, such as our Bourbon Vanilla Bean Cupcakes and Royal Red Velvet Cake. You can filter our menu by dietary tags at any time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Flagship Boutiques & Private Events
+       ========================================================================== -->
+  <section id="boutiquesSection" class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">Global Locations</span>
+        <h2 class="section-title">Flagship Boutiques & Lounges</h2>
+        <p class="section-subtitle">
+          Visit our luxury bakery boutiques across New York, London, and Paris.
+        </p>
+      </div>
+
+      <div class="boutiques-grid">
+        <!-- New York -->
+        <div class="boutique-card">
+          <div class="boutique-media">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=85" alt="Maison Dorée Madison Avenue New York" loading="lazy">
+          </div>
+          <div class="boutique-details">
+            <h3>New York • Madison Avenue</h3>
+            <div class="boutique-address">740 Madison Avenue, New York, NY 10065</div>
+            <div class="boutique-meta-row">
+              <span>🕒 Tue – Sun: 07:30 AM – 08:30 PM</span>
+            </div>
+            <div class="boutique-meta-row">
+              <span>📞 +1 (212) 555-0199</span>
+            </div>
+            <div style="margin-top: 1.25rem;">
+              <button class="btn btn-outline btn-sm btn-full" onclick="App.scrollToSalon()">Reserve Lounge Table</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- London -->
+        <div class="boutique-card">
+          <div class="boutique-media">
+            <img src="https://images.unsplash.com/photo-1576402187878-974f70c890a5?auto=format&fit=crop&w=800&q=85" alt="Maison Dorée Mayfair London" loading="lazy">
+          </div>
+          <div class="boutique-details">
+            <h3>London • Mayfair</h3>
+            <div class="boutique-address">28 Mount Street, Mayfair, London W1K 2SX</div>
+            <div class="boutique-meta-row">
+              <span>🕒 Mon – Sun: 08:00 AM – 08:00 PM</span>
+            </div>
+            <div class="boutique-meta-row">
+              <span>📞 +44 20 7946 0912</span>
+            </div>
+            <div style="margin-top: 1.25rem;">
+              <button class="btn btn-outline btn-sm btn-full" onclick="App.scrollToSalon()">Reserve Lounge Table</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paris -->
+        <div class="boutique-card">
+          <div class="boutique-media">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=85" alt="Maison Dorée Paris Place Vendôme" loading="lazy">
+          </div>
+          <div class="boutique-details">
+            <h3>Paris • Place Vendôme</h3>
+            <div class="boutique-address">18 Place Vendôme, 75001 Paris, France</div>
+            <div class="boutique-meta-row">
+              <span>🕒 Mon – Sun: 07:00 AM – 09:00 PM</span>
+            </div>
+            <div class="boutique-meta-row">
+              <span>📞 +33 1 42 68 00 18</span>
+            </div>
+            <div style="margin-top: 1.25rem;">
+              <button class="btn btn-outline btn-sm btn-full" onclick="App.scrollToSalon()">Reserve Lounge Table</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Private Event Inquiries Box -->
+      <div style="background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-luxe);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div>
+            <span class="section-label">Private Events & Catering</span>
+            <h3 class="font-serif" style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-primary);">Host Your Event with Maison Dorée</h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;">
+              Our private tasting lounges and master pastry team are available for exclusive birthday celebrations, wedding dessert tables, corporate events, and cake masterclasses.
+            </p>
+            <div style="display: flex; gap: 1rem; font-size: 0.82rem; color: var(--gold-light);">
+              <span>✓ Custom Dessert Towers</span>
+              <span>✓ Personalized Menus</span>
+              <span>✓ White-Glove Service</span>
+            </div>
+          </div>
+
+          <form id="privateEventForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+              <div>
+                <label class="form-label">Contact Name:</label>
+                <input type="text" class="form-control" placeholder="Evelyn Harrison" required>
+              </div>
+              <div>
+                <label class="form-label">Event Occasion:</label>
+                <select class="form-control">
+                  <option>Luxury Wedding Reception</option>
+                  <option>Birthday Celebration</option>
+                  <option>Corporate Gala / VIP Launch</option>
+                  <option>Private Tasting Lounge Buyout</option>
+                </select>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem;">
+              <label class="form-label">Email or Phone Number:</label>
+              <input type="text" class="form-control" placeholder="evelyn@domain.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Private Event Inquiry</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VIP Privilege Club Newsletter
+       ========================================================================== -->
+  <section style="background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%); padding: 5rem 0; border-top: 1px solid var(--border-subtle);">
+    <div class="container text-center" style="max-width: 650px;">
+      <span class="section-label">VIP Tasting Club</span>
+      <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 0.75rem;">Join The Sweet Circle</h2>
+      <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 2rem;">
+        Enjoy invitations to private seasonal tasting flights, priority custom cake slots, and an instant 15% discount code for your first online order.
+      </p>
+
+      <form id="newsletterForm" style="display: flex; gap: 0.75rem;">
+        <input type="email" id="newsletterEmail" class="form-control" placeholder="Enter your email address" required style="flex-grow: 1; border-radius: var(--radius-full); padding-left: 1.5rem;">
+        <button type="submit" class="btn btn-primary" style="border-radius: var(--radius-full); padding: 0 2rem; white-space: nowrap;">
+          <span>Join VIP Club</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer style="background: #080706; border-top: 1px solid var(--border-subtle); padding: 4.5rem 0 2.5rem; color: var(--text-secondary); font-size: 0.85rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3.5rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+            <svg class="brand-crest" style="width: 34px; height: 34px;" viewBox="0 0 44 44" fill="currentColor">
+              <path d="M22 2L25 12H35L27 18L30 28L22 22L14 28L17 18L9 12H19L22 2Z" fill="var(--gold-primary)"/>
+            </svg>
+            <span class="brand-title" style="font-size: 1.25rem; color: var(--text-primary);">MAISON DORÉE</span>
+          </div>
+          <p style="color: var(--text-muted); line-height: 1.7; max-width: 340px; margin-bottom: 1.5rem;">
+            Luxury Bakery & Confectionery. Handcrafted celebration cakes, 24K gold gourmet donuts, and artisan cupcakes created with authentic dedication.
+          </p>
+          <div style="display: flex; gap: 1rem; color: var(--gold-light);">
+            <span>Instagram: @MaisonDoreeBakery</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--text-primary); margin-bottom: 1.2rem;">Our Sweets</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.65rem;">
+            <li><a href="#menuSection" onclick="App.setCategoryFilter('cakes')">Signature Cakes</a></li>
+            <li><a href="#menuSection" onclick="App.setCategoryFilter('donuts')">Gourmet Glazed Donuts</a></li>
+            <li><a href="#menuSection" onclick="App.setCategoryFilter('cupcakes')">Artisan Cupcakes</a></li>
+            <li><a href="#bespokeSection">Custom Wedding Cakes</a></li>
+            <li><a href="#gallerySection">Sweet Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--text-primary); margin-bottom: 1.2rem;">The Experience</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.65rem;">
+            <li><a href="#salonSection">Dessert Tasting Lounge</a></li>
+            <li><a href="#salonSection">Imperial Afternoon High Tea</a></li>
+            <li><a href="#heritageSection">Master Baker's Craft</a></li>
+            <li><a href="#boutiquesSection">Private Event Inquiries</a></li>
+            <li><a href="#reviewsSection">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--text-primary); margin-bottom: 1.2rem;">Bakery Concierge</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.65rem;">
+            <li><span style="color: var(--gold-light);">concierge@maisondoree.com</span></li>
+            <li><span>New York: +1 (212) 555-0199</span></li>
+            <li><span>London: +44 20 7946 0912</span></li>
+            <li><span>Paris: +33 1 42 68 00 18</span></li>
+            <li><span style="color: var(--text-muted); font-size: 0.78rem;">Refrigerated White-Glove Courier</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.78rem; color: var(--text-muted);">
+        <div>© 2026 Maison Dorée Luxury Bakery LLC. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#">Privacy Protocol</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Allergen & Ingredient Transparency</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Slide-Over Cart Drawer
+       ========================================================================== -->
+  <div id="cartBackdrop" class="drawer-backdrop" onclick="Cart.toggleDrawer(false)"></div>
+  <aside id="cartDrawer" class="slide-drawer" aria-label="Shopping Bag">
+    <div class="drawer-header">
+      <h3>Your Shopping Bag</h3>
+      <button class="drawer-close-btn" onclick="Cart.toggleDrawer(false)">✕</button>
+    </div>
+
+    <!-- Free Courier Delivery Progress Bar -->
+    <div class="free-shipping-bar">
+      <div id="freeShipRemainingText" class="free-shipping-text">
+        <span>Complimentary courier delivery on orders over $120.00</span>
+      </div>
+      <div class="progress-track">
+        <div id="freeShipProgressFill" class="progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items List -->
+    <div id="cartDrawerItems" class="drawer-body">
+      <!-- Injected by Cart.renderCartDrawer() -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="drawer-footer">
+      <!-- Promo Code Form -->
+      <form id="cartPromoForm" class="promo-form">
+        <input type="text" id="cartPromoInput" class="promo-input" placeholder="Promo Code (e.g. LUXE15)">
+        <button type="submit" class="btn btn-outline btn-sm">Apply</button>
+      </form>
+
+      <div class="drawer-calc-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotalAmount">$0.00</span>
+      </div>
+      <div id="cartDiscountRow" class="drawer-calc-row discount" style="display: none;">
+        <span>Promo Discount:</span>
+        <span id="cartDiscountAmount">-$0.00</span>
+      </div>
+      <div class="drawer-calc-row">
+        <span>Refrigerated Courier Delivery:</span>
+        <span id="cartShippingAmount">$0.00</span>
+      </div>
+
+      <div class="drawer-calc-total">
+        <span>Estimated Total:</span>
+        <span id="cartTotalAmount" class="drawer-total-price">$0.00</span>
+      </div>
+
+      <button class="btn btn-primary btn-full btn-lg" onclick="App.openCheckoutModal()">
+        <span>Proceed to Secure Checkout</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Slide-Over Wishlist Drawer
+       ========================================================================== -->
+  <div id="wishlistBackdrop" class="drawer-backdrop" onclick="Cart.toggleWishlistDrawer(false)"></div>
+  <aside id="wishlistDrawer" class="slide-drawer" aria-label="Saved Treats">
+    <div class="drawer-header">
+      <h3>Saved Favorites</h3>
+      <button class="drawer-close-btn" onclick="Cart.toggleWishlistDrawer(false)">✕</button>
+    </div>
+    <div id="wishlistDrawerItems" class="drawer-body">
+      <!-- Injected by Cart.renderWishlistDrawer() -->
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Product Quick View Modal
+       ========================================================================== -->
+  <div id="quickViewModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="App.closeQuickView()">✕</button>
+      <div class="quick-view-grid">
+        <div class="quick-view-media">
+          <img id="qvImage" src="" alt="Product Detail View">
+        </div>
+        <div class="quick-view-info">
+          <div style="margin-bottom: 0.5rem;">
+            <span id="qvBadge" class="luxe-badge gold">Signature</span>
+          </div>
+          <h2 id="qvTitle">Product Name</h2>
+          <div id="qvFrench" class="quick-view-french">Product Subtitle</div>
+          <div id="qvPrice" class="quick-view-price">$0.00</div>
+
+          <p id="qvDesc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.25rem;">Description</p>
+
+          <div class="pairing-box">
+            <strong style="color: var(--gold-light); display: block; margin-bottom: 3px;">Master Baker Pairing Recommendation:</strong>
+            <span id="qvPairing">Pairing Details</span>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 0.4rem;">Allergens & Dietary:</div>
+            <div id="qvAllergens" class="allergens-list"></div>
+            <div id="qvServing" style="font-size: 0.75rem; color: var(--text-muted); font-style: italic;"></div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: center; margin-top: auto;">
+            <div class="qty-stepper" style="padding: 0.35rem 0.5rem;">
+              <button class="qty-btn" onclick="App.updateQuickViewQty(-1)">-</button>
+              <span id="qvQtyVal" class="qty-val" style="font-size: 1rem; min-width: 28px; text-align: center;">1</span>
+              <button class="qty-btn" onclick="App.updateQuickViewQty(1)">+</button>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="App.addQuickViewToBag()">
+              <span>Add to Shopping Bag</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Multi-Step Luxury Checkout Modal
+       ========================================================================== -->
+  <div id="checkoutModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 680px;">
+      <button class="modal-close-btn" onclick="App.closeCheckoutModal()">✕</button>
+      <div class="checkout-modal-content">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <span class="section-label">Concierge Checkout</span>
+          <h2 class="font-serif" style="font-size: 1.8rem; color: var(--text-primary);">Complete Your Order</h2>
+        </div>
+
+        <form id="checkoutOrderForm" onsubmit="App.submitCheckout(event)">
+          <!-- Fulfillment Selector -->
+          <label class="form-label">Delivery or Pickup:</label>
+          <div class="fulfillment-toggle">
+            <label class="fulfillment-card selected">
+              <input type="radio" name="fulfillmentMethod" value="courier" checked style="display: none;" onchange="this.closest('.fulfillment-toggle').querySelectorAll('.fulfillment-card').forEach(c => c.classList.remove('selected')); this.parentElement.classList.add('selected');">
+              <div style="font-weight: 600; font-size: 0.88rem; color: var(--text-primary); margin-bottom: 4px;">🚚 Chilled Courier Delivery</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Temperature-controlled white-glove courier</div>
+            </label>
+            <label class="fulfillment-card">
+              <input type="radio" name="fulfillmentMethod" value="pickup" style="display: none;" onchange="this.closest('.fulfillment-toggle').querySelectorAll('.fulfillment-card').forEach(c => c.classList.remove('selected')); this.parentElement.classList.add('selected');">
+              <div style="font-weight: 600; font-size: 0.88rem; color: var(--text-primary); margin-bottom: 4px;">🏛️ Boutique Pickup</div>
+              <div style="font-size: 0.72rem; color: var(--text-muted);">Pick up in Madison Ave / Place Vendôme</div>
+            </label>
+          </div>
+
+          <!-- Recipient Details -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="chkFullName">Recipient Full Name:</label>
+              <input type="text" id="chkFullName" class="form-control" placeholder="Lady Eleanor Vance" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="chkEmail">Confirmation Email:</label>
+              <input type="email" id="chkEmail" class="form-control" placeholder="eleanor@domain.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="chkAddress">Delivery Address / Apartment Suite:</label>
+            <input type="text" id="chkAddress" class="form-control" placeholder="740 Park Avenue, Apt 14B">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label" for="chkCity">City & Postal Zip Code:</label>
+              <input type="text" id="chkCity" class="form-control" placeholder="New York, NY 10021">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="chkSlot">Preferred Delivery Window:</label>
+              <select id="chkSlot" class="form-control">
+                <option>Morning (08:00 AM – 11:00 AM)</option>
+                <option>Afternoon (01:00 PM – 04:00 PM)</option>
+                <option>Evening Party (06:00 PM – 08:30 PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Payment Simulation -->
+          <div style="background: var(--bg-tertiary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin: 1.5rem 0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span style="font-size: 0.78rem; text-transform: uppercase; color: var(--gold-light); font-weight: 600;">Payment Method:</span>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">256-Bit Encrypted Secure Vault</span>
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center;">
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; cursor: pointer;">
+                <input type="radio" name="paymentMethod" checked> Apple Pay / Black Card
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; cursor: pointer;">
+                <input type="radio" name="paymentMethod"> Visa / Mastercard / Amex
+              </label>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem; padding-top: 1rem; border-top: 1px dashed var(--border-gold);">
+            <span style="font-size: 0.95rem; font-weight: 600;">Total Amount:</span>
+            <span id="checkoutTotalReview" style="font-family: var(--font-serif); font-size: 1.7rem; font-weight: 700; color: var(--gold-bright);">$0.00</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            <span>Authorize & Confirm Order</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Printable Luxury Order Receipt Modal
+       ========================================================================== -->
+  <div id="orderReceiptModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 620px;">
+      <button class="modal-close-btn" onclick="App.closeReceiptModal()">✕</button>
+      <div class="receipt-card">
+        <div class="text-center">
+          <svg class="receipt-crest" viewBox="0 0 44 44" fill="currentColor">
+            <path d="M22 2L25 12H35L27 18L30 28L22 22L14 28L17 18L9 12H19L22 2Z" fill="var(--gold-primary)"/>
+          </svg>
+          <h2 class="font-serif" style="font-size: 1.6rem; margin-bottom: 4px;">Maison Dorée</h2>
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold-light);">Order Receipt & Confirmation</div>
+          <div id="receiptOrderNumber" class="receipt-num" style="margin-top: 0.5rem;">MD-ORDER-000000</div>
+        </div>
+
+        <div class="receipt-divider"></div>
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">
+          <span>Date:</span>
+          <span id="receiptDate" style="color: var(--text-primary); font-weight: 500;">Today</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">
+          <span>Recipient:</span>
+          <span id="receiptCustomer" style="color: var(--text-primary); font-weight: 500;">Guest</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+          <span>Fulfillment:</span>
+          <span id="receiptFulfillment" style="color: var(--text-primary); font-weight: 500; text-align: right; max-width: 280px;">Refrigerated Courier</span>
+        </div>
+
+        <div class="receipt-divider"></div>
+
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-light); margin-bottom: 0.85rem;">Items Prepared:</div>
+        <div id="receiptItemsList">
+          <!-- Item list injected -->
+        </div>
+
+        <div class="receipt-divider"></div>
+
+        <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 1.2rem; font-weight: 700;">
+          <span>Total Paid:</span>
+          <span id="receiptTotal" style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--gold-bright);">$0.00</span>
+        </div>
+
+        <div style="text-align: center; margin-top: 1.75rem; font-size: 0.75rem; color: var(--text-muted); line-height: 1.6;">
+          Your order is being carefully hand-packaged in our bakery atelier. You will receive real-time temperature tracking updates via SMS and email.
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+          <button class="btn btn-outline btn-full" onclick="App.printReceipt()">
+            <span>Print Receipt</span>
+          </button>
+          <button class="btn btn-primary btn-full" onclick="App.closeReceiptModal()">
+            <span>Done</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       VIP Lounge Reservation Pass Modal
+       ========================================================================== -->
+  <div id="reservationPassModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 540px;">
+      <button class="modal-close-btn" onclick="App.closePassModal()">✕</button>
+      <div class="receipt-card text-center" style="background: #110f0d; border-color: var(--gold-bright);">
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold-light); margin-bottom: 0.5rem;">VIP Lounge Access</div>
+        <h2 class="font-serif" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Tasting Lounge Pass</h2>
+        <div id="passCodeNumber" class="receipt-num" style="font-size: 1.2rem; color: var(--gold-bright); margin-bottom: 1.5rem;">MD-LOUNGE-0000</div>
+
+        <!-- Simulated Luxury QR Visual -->
+        <div style="width: 140px; height: 140px; margin: 0 auto 1.5rem; background: #fff; padding: 10px; border-radius: 8px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; box-shadow: 0 4px 20px rgba(197, 160, 89, 0.3);">
+          <div style="background: #000;"></div><div style="background: #000;"></div><div style="background: #000;"></div><div></div><div style="background: #000;"></div>
+          <div style="background: #000;"></div><div></div><div style="background: #000;"></div><div></div><div style="background: #000;"></div>
+          <div></div><div></div><div style="background: #000;"></div><div style="background: #000;"></div><div></div>
+          <div style="background: #000;"></div><div></div><div></div><div style="background: #000;"></div><div style="background: #000;"></div>
+          <div style="background: #000;"></div><div style="background: #000;"></div><div style="background: #000;"></div><div></div><div style="background: #000;"></div>
+        </div>
+
+        <div id="passExperienceName" style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Experience Name</div>
+        <div id="passBoutiqueName" style="font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.5rem;">Maison Dorée New York Madison</div>
+        <div id="passDateTime" style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem;">Date & Time</div>
+        <div id="passGuestInfo" style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 2rem;">Guests</div>
+
+        <div style="display: flex; gap: 1rem;">
+          <button class="btn btn-outline btn-full" onclick="window.print()">Print VIP Pass</button>
+          <button class="btn btn-primary btn-full" onclick="App.closePassModal()">Save & Return</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Write a Review Modal
+       ========================================================================== -->
+  <div id="writeReviewModal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 520px;">
+      <button class="modal-close-btn" onclick="App.closeReviewModal()">✕</button>
+      <div style="padding: 2.5rem;">
+        <span class="section-label">Customer Feedback</span>
+        <h2 class="font-serif" style="font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--text-primary);">Share Your Sweet Experience</h2>
+
+        <form id="submitReviewForm">
+          <div class="form-group">
+            <label class="form-label" for="revAuthor">Your Full Name:</label>
+            <input type="text" id="revAuthor" class="form-control" placeholder="e.g. Evelyn Harrison" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="revRating">Rating:</label>
+            <select id="revRating" class="form-control">
+              <option value="5">★★★★★ Exceptional (5 Stars)</option>
+              <option value="4">★★★★☆ Very Good (4 Stars)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="revText">Your Review:</label>
+            <textarea id="revText" class="form-control" rows="4" placeholder="Tell us about the flavor of the cake, the texture of the donuts, or your experience..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Publish Review</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Luxury Toast Notification Stack
+       ========================================================================== -->
+  <div id="toastStack" class="toast-stack"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/cake-builder.js"></script>
+  <script src="js/reservation.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
